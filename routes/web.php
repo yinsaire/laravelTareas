@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/tareas', function () {
-    return view('tareas/index');
-})->name('tareas');
+Route::get('/', [TareasController::class, 'index'])->name('tareas');
 
-Route::post('/tareas', [TareasController::class, 'store'])->name('tareas');
+Route::post('/', [TareasController::class, 'store'])->name('tareas');
+
+Route::get('/{id}', [TareasController::class, 'show'])->name('tareas-edit');
+
+Route::patch('/{id}', [TareasController::class, 'update'])->name('tareas-update');
+
+Route::delete('/{id}', [TareasController::class, 'destroy'])->name('tareas-destroy');
