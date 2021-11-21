@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-   <div class="container w-25 border p-4 my-4" style="background-color: #fffbf0; border-radius: .5rem;">
+   <div class="container w-25 border p-4 my-4" style="background-color: #ffffff; border-radius: .5rem;">
       <div class="row mx-auto">
          <form action="{{ route('categories.store') }}" method= "POST">
             @csrf
@@ -21,7 +21,7 @@
 
             <div class="mb-3">
                <label for="color" class="form-label"><strong>Elija un color para la categoría</strong></label>
-               <input type="color" name="color" class="form-control">
+               <input type="color" name="color" class="form-control" value="#af1bb1">
             </div>
             
             <center>

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-   <div class="container w-25 border p-4 mt-4" style="background-color: #ffffe4; border-radius: .5rem;">
+   <div class="container w-25 border p-4 mt-4" style="background-color: #d6ff8f; border-radius: .5rem;">
       <form action="{{ route('todos') }}" method= "POST">
          @csrf
 
