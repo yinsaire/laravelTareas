@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\TareasController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodosController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TareasController::class, 'index'])->name('tareas');
+Route::get('/', [CategoriesController::class, 'index']);
 
-Route::post('/', [TareasController::class, 'store'])->name('tareas');
+Route::get('/tareas', [TodosController::class, 'index'])->name('todos');
 
-Route::get('/{id}', [TareasController::class, 'show'])->name('tareas-edit');
+Route::post('/tareas', [TodosController::class, 'store'])->name('todos');
 
-Route::patch('/{id}', [TareasController::class, 'update'])->name('tareas-update');
+Route::get('/tareas/{id}', [TodosController::class, 'show'])->name('todos-edit');
 
-Route::delete('/{id}', [TareasController::class, 'destroy'])->name('tareas-destroy');
+Route::patch('/tareas/{id}', [TodosController::class, 'update'])->name('todos-update');
+
+Route::delete('/tareas/{id}', [TodosController::class, 'destroy'])->name('todos-destroy');
+
+Route::resource('categories', CategoriesController::class);

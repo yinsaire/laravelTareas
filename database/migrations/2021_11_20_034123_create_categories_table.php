@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLatareasTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateLatareasTable extends Migration
      */
     public function up()
     {
-        Schema::create('latareas', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateLatareasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('latareas');
+        Schema::dropIfExists('categories');
     }
 }
